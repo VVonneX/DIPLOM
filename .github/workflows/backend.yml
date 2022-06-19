@@ -9,11 +9,8 @@ on:
   pull_request:
     branches: [ main ]
 
-permissions:
-  contents: read
-
 jobs:
-  build:
+  build_test_docker:
     
     runs-on: ubuntu-latest
     
