@@ -31,18 +31,20 @@ import java.io.IOException;
 public class AuthConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
     @Autowired
     private UserDetailsService UserDetailsService;
+    //Сервис, который отвечает за информацию о пользователе
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    //Штуки для хеширования паролей в бд, для обеспечения безопасности(чтобы не украли)
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth)
             throws Exception {
         auth.userDetailsService(UserDetailsService);
     }
-
+    // интегрирует UserDetailsService в механизм ауинтификации spring
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         System.setProperty("https.protocols", "TLSv1.2");
@@ -60,7 +62,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter implements WebMvcCo
                 .loginProcessingUrl("/auth/login")
                 .and()
                 .logout()
-                .logoutUrl("/auth/logout")
+                .logoutUrl("/auth/logout") // все, что представленно выше, доступных апишек(по сути, настраиваю уровни доступа для пользователей)
                 .logoutSuccessHandler(new LogoutSuccessHandler() {
                     @Override
                     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -74,7 +76,7 @@ public class AuthConfig extends WebSecurityConfigurerAdapter implements WebMvcCo
                         }
                         response.setStatus(HttpServletResponse.SC_OK);
                     }
-                })
+                }) // она определяет последоватеельноть действий вы успешном выходе пользователя с учетной записи
                 .deleteCookies("JSESSIONID")
                 .invalidateHttpSession(false)
                 .permitAll()
@@ -84,10 +86,12 @@ public class AuthConfig extends WebSecurityConfigurerAdapter implements WebMvcCo
                 .csrf().disable();
     }
 
+
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOrigins("*")
                 .allowedMethods("*");
     }
+    // настройка позволяющая принмать запросы с внешних источников(по сути, общение, условно, между серверами)
 }

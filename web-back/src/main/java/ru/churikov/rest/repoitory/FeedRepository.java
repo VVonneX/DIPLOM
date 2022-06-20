@@ -8,5 +8,7 @@ import java.util.Optional;
 
 @Repository
 public interface FeedRepository extends JpaRepository<Feed, Long> {
-    Optional <Feed> findOneById(Long id);
+    Optional <Feed> findOneById(Long id); //сохдает sql запрос, который ищет заметку по id
 }
+
+// интерфейс для генерации репозитория (пишет sql за меня)

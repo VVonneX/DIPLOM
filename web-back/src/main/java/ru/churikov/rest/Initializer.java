@@ -35,4 +35,5 @@ public class Initializer {
         feedRepository.save(new Feed("Заметка 3", "Описание заметки 3"));
         feedRepository.save(new Feed("Заметка 4", "Описание заметки 4"));
     }
+    // инициализирует тестовые записи в базе данных
 }

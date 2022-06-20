@@ -14,9 +14,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetailsServiceImpl(AuthUserRepository authUserRepository) {
         this.authUserRepository = authUserRepository;
     }
+    // конструктор
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return authUserRepository.findByUsername(username).orElseThrow(()-> new UsernameNotFoundException("User not found"));
     }
+    // получить пользователя по имени
 }

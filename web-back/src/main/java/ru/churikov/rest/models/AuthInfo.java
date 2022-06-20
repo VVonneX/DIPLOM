@@ -23,4 +23,4 @@ public class AuthInfo {
         username = Optional.of(user.getUsername());
         role = Optional.of(user.getRole());
     }
-}
+} // информация о пользователе

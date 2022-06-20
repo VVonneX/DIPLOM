@@ -17,4 +17,5 @@ public class Main {
         SpringApplication.run(Main.class, args);
         initializer.initial();
     }
+    // запускает проект
 }

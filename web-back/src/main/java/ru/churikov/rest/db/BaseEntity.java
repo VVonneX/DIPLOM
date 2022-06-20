@@ -17,3 +17,4 @@ public class BaseEntity {
     private Long id;
 }
 
+//наследование всех сущностей, которые наследуются в бд

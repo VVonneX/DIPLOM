@@ -2,7 +2,7 @@ version: '3'
 services:
 
   front:
-    image: wonnex/frontend
+    image: wonnex/frontend:latest
     container_name: frontend
     ports: 
       - 4200:4200
@@ -10,7 +10,7 @@ services:
     
   
   back:
-    image: wonnex/backend
+    image: wonnex/backend:latest
     container_name: backend
     ports:
       - 8080:8080

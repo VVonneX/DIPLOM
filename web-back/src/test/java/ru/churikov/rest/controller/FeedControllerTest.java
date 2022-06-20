@@ -61,6 +61,9 @@ public class FeedControllerTest {
                 .andExpect(jsonPath("$[0].name", equalTo(NAME)))
                 .andReturn();
     }
+    // проверка метода getAllFeed(вместо обычного feedService используется мок сервис, который иметирует поведение фид сервиса,
+    // поведение которого мы точно контролируем, и ожидаем возвращение заранее изместного результата
+    // в нашем случаем, возвращает значения в конфигурации)
 
     @Test
     void getOneByFeed() throws Exception {

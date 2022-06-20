@@ -17,6 +17,7 @@ public class FeedDto {
     public static List<FeedDto> entityToDtoList(List <Feed> list) {
         return list.stream().map(FeedDto::entityToDto).collect(Collectors.toList());
     }
+    // объект для отправки заметки по http
 
     public static FeedDto entityToDto(Feed feed) {
         FeedDto dto = new FeedDto();
@@ -25,6 +26,7 @@ public class FeedDto {
         dto.setDescription(feed.getDescription());
         return dto;
     }
+    // методы Mapping из сущности базы данных в сущность отправки по http
 
     public static Feed DtoToEntity(FeedDto dto) {
         Feed feed = new Feed();
@@ -33,4 +35,5 @@ public class FeedDto {
         feed.setName(dto.getName());
         return feed;
     }
+    // методы Mapping из сущность отправки по http в сущности базы данных
 }

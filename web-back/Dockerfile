@@ -1,5 +1,4 @@
 FROM adoptopenjdk:11
-#WORKDIR /Diplom/web-back
 EXPOSE 8080
 ADD build/libs/template-REST-1.0-SNAPSHOT.jar backend.jar
 ENTRYPOINT ["java","-jar","/backend.jar"]

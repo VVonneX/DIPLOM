@@ -11,9 +11,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Feed extends BaseEntity {
+public class Feed extends BaseEntity { // наследование из класса BaseEntity, чтобы были id
 
     private String name;
     private String description;
-
+    // заметки
 }

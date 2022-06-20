@@ -19,6 +19,7 @@ public class MainController {
     String hello() {
         return "Hello";
     }
+    // тестовое api
 
     @GetMapping(path= "/auth/this")
     AuthInfo getCurrentUser(){
@@ -28,4 +29,5 @@ public class MainController {
         }
         return new AuthInfo((AuthUser) user);
     }
+    // возвращает информацию о пользователе текущей сессии(как тебя воспринимает бэкенд, тоесть, какие у тебя есть права)
 }

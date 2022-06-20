@@ -28,31 +28,33 @@ public class AuthUser extends BaseEntity implements UserDetails {
         this.enabled = enabled;
         this.username = username;
         this.role = role;
-    }
+    } //объект о хранение информации пользователя в бд
 
     private String username;
     private boolean enabled;
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
+    // в базе данных храниться строка, а в заимодействие происходит как с enum
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singleton(role);
     }
+    //возвращает список прав пользователей
 
     @Override
     public boolean isAccountNonExpired() {
         return true;
-    }
+    } // проверка, что аккаунт не истек
 
     @Override
     public boolean isAccountNonLocked() {
         return true;
-    }
+    } // проверка, что аккаунт не заблокирован
 
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
-    }
+    } // проверка, что права доступа не истекли
 }
