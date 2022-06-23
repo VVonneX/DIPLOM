@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'web-front';
+  title = 'web-frontend';
   public authInfo$: BehaviorSubject<AuthInfo> = this.auth.authInfo$;
 
   constructor(private auth: AuthService, private router: Router) {
