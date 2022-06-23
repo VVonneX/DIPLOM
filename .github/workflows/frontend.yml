@@ -34,8 +34,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Test
-      run: npm test --browsers Edge
-      #--watch=false
+      run: npm test --watch=false
     
   
     - name: Login to Docker Hub
