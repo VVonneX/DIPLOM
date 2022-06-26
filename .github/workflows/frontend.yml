@@ -34,7 +34,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Test
-      run: npm test --no-watch --no-progress --browsers=ChromeHeadlessCI
+      run: npm test 
     
   
     - name: Login to Docker Hub
