@@ -6,7 +6,7 @@
     "start": "ng serve --host=0.0.0.0 --disable-host-check",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test" : "ng test --host=0.0.0.0 --disable-host-check"
+    "test" : "ng test"
   },
   "private": true,
   "dependencies": {
