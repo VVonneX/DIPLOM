@@ -6,7 +6,7 @@ import {MinimalisticUiKitForAngularModule} from "../../projects/minimalistic-ui-
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule,  HttpClient} from "@angular/common/http";
 import { FeedComponent } from './pages/feed/feed.component';
 import { CreateEditComponent } from './pages/feed/create-edit/create-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,7 +37,7 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
