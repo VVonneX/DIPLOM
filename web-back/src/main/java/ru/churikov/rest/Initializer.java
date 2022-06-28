@@ -30,7 +30,7 @@ public class Initializer {
         authUserRepo.save(user);
         authUserRepo.save(admin);
 
-        feedRepository.save(new Feed("Заметка 1", "Основная заметка"));
+        feedRepository.save(new Feed("Заметка 1", "Описание заметки 1"));
         feedRepository.save(new Feed("Заметка 2", "Описание заметки 2"));
         feedRepository.save(new Feed("Заметка 3", "Описание заметки 3"));
         feedRepository.save(new Feed("Заметка 4", "Описание заметки 4"));
