@@ -1,22 +1,19 @@
-package ru.churikov.rest.service;
+package ru.churikov.rest.mocktest.servicetest;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import ru.churikov.rest.models.Feed;
-import ru.churikov.rest.models.FeedDto;
 import ru.churikov.rest.repoitory.FeedRepository;
+import ru.churikov.rest.service.FeedService;
 
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -84,3 +81,4 @@ class FeedServiceTest {
     }
 
 }
+

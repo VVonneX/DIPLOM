@@ -1,4 +1,4 @@
-package ru.churikov.rest.controller;
+package ru.churikov.rest.mocktest.contollertest;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -75,16 +75,16 @@ public class FeedControllerTest {
                 .andReturn();
     }
 
-  /*  @Test
-    void createOrEdit() throws Exception {
-        Mockito.when(feedService.save(Mockito.any(Feed.class))).thenReturn(getFeed());
+    /*  @Test
+      void createOrEdit() throws Exception {
+          Mockito.when(feedService.save(Mockito.any(Feed.class))).thenReturn(getFeed());
 
-        mockMvc.perform(post(URL).content(readFileAsString("feed/saveFeed.json")))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name", equalTo(NAME)))
-                .andReturn();
-    }
-*/
+          mockMvc.perform(post(URL).content(readFileAsString("feed/saveFeed.json")))
+                  .andExpect(status().isOk())
+                  .andExpect(jsonPath("$.name", equalTo(NAME)))
+                  .andReturn();
+      }
+  */
     public static String readFileAsString(String filename) throws IOException {
         File file = new File("src/test/resources/" + filename);
         Path path = file.toPath();
