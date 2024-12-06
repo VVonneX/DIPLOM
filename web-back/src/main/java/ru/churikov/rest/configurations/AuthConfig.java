@@ -25,6 +25,7 @@ import java.io.IOException;
 @Configuration
 @EnableWebSecurity
 public class AuthConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer {
+
     @Autowired
     private UserDetailsService UserDetailsService;
     //Сервис, который отвечает за информацию о пользователе
