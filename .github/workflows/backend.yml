@@ -32,6 +32,9 @@ jobs:
       
     - name: Clean jar
       run: ./gradlew clean
+
+    - name: Test
+      run: ./gradlew test
       
     - name: Build jar
       run: ./gradlew booJar
