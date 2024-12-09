@@ -1,7 +1,8 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.1'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '2.7.5' // Обновлено до последней стабильной версии
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE' // Обновлено
     id 'java'
+    id 'io.qameta.allure' version '2.10.0' // Обновлено до последней стабильной версии
 }
 
 group 'ru.churikov'
@@ -13,7 +14,7 @@ repositories {
 
 dependencies {
     implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
-    implementation 'org.yaml:snakeyaml:1.8'
+    implementation 'org.yaml:snakeyaml:1.30' // Обновлено
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -21,11 +22,17 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.security:spring-security-test'
+    implementation 'io.rest-assured:rest-assured:4.5.1' // Обновлено до последней стабильной версии
+    implementation 'com.google.code.gson:gson:2.10.1' // Оставлено без изменений
+    implementation 'junit:junit:4.13.2' // Оставлено без изменений
+    implementation 'io.qameta.allure:allure-junit4:2.10.0' // Обновлено
+    implementation 'io.qameta.allure:allure-rest-assured:2.10.0' // Обновлено
 }
 
 configurations {
+    aspectj
     compileOnly {
         extendsFrom annotationProcessor
     }
@@ -33,4 +40,9 @@ configurations {
 
 test {
     useJUnitPlatform()
+    systemProperty 'allure.results.directory', "${buildDir}/allure-results"
+}
+
+dependencies {
+    aspectj 'org.aspectj:aspectjweaver:1.9.7' // Укажите вашу версию AspectJ
 }
