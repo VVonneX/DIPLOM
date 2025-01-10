@@ -51,4 +51,20 @@ public class BaseHttpClient {
                 .thenReturn();
     }
 
+    protected Response doDelete(String path) {
+        return given()
+                .spec(requestSpecificationAuth())
+                .delete(path)
+                .thenReturn();
+    }
+
+    protected Response doPost(String path, Object body) {
+        return given()
+                .spec(requestSpecificationAuth())
+                .header("Content-type", "application/json")
+                .body(body)
+                .post(path)
+                .thenReturn();
+    }
+
 }
