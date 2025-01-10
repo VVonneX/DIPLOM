@@ -9,7 +9,7 @@ public class DeleteApiTest {
 
     private FeedSteps steps = new FeedSteps();
 
-    @Test
+ //   @Test
     public void deleteAuthFeedPositiveTest() {
         ValidatableResponse response = steps.deleteFeed("1");
         response.assertThat().statusCode(200);

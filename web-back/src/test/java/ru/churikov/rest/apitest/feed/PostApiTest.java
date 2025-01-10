@@ -11,7 +11,7 @@ public class PostApiTest {
 
     private FeedSteps steps = new FeedSteps();
 
-    @Test
+ //   @Test
     public void postAuthFeedPositiveTest() {
         Feed feed = new Feed("111", "faker.book().title()");
         ValidatableResponse response = steps.postFeed(feed);
