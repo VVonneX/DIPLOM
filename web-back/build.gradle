@@ -33,6 +33,14 @@ dependencies {
     testImplementation 'io.github.bonigarcia:webdrivermanager:4.4.3'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'ru.churikov.rest.Main' // Укажите ваш главный класс
+        )
+    }
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
