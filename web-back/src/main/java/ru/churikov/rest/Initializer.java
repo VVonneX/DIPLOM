@@ -2,6 +2,7 @@ package ru.churikov.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.churikov.rest.models.Feed;
@@ -15,8 +16,13 @@ public class Initializer {
 
     @Autowired
     private AuthUserRepository authUserRepo;
-    @Autowired
+
     private ObjectMapper objectMapper;
+
+    public Initializer() {
+        objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new Jdk8Module());
+    }
 
     @Autowired
     private FeedRepository feedRepository;

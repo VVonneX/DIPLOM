@@ -2,10 +2,10 @@ plugins {
     id 'org.springframework.boot' version '2.7.5' // Обновлено до последней стабильной версии
     id 'io.spring.dependency-management' version '1.0.11.RELEASE' // Обновлено
     id 'java'
-    id 'io.qameta.allure' version '2.10.0' // Обновлено до последней стабильной версии
+    id 'io.qameta.allure' version '2.11.0' // Обновлено до последней стабильной версии
 }
 
-group 'ru.churikov'
+group 'ru.churikov.rest'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -13,36 +13,32 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
-    implementation 'org.yaml:snakeyaml:1.30' // Обновлено
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    implementation 'org.yaml:snakeyaml:2.0' // Обновлено
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'org.postgresql:postgresql'
-    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
     implementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.security:spring-security-test'
-    implementation 'io.rest-assured:rest-assured:4.5.1' // Обновлено до последней стабильной версии
-    implementation 'com.google.code.gson:gson:2.10.1' // Оставлено без изменений
-    implementation 'junit:junit:4.13.2' // Оставлено без изменений
+    implementation 'io.rest-assured:rest-assured:4.5.1'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'org.testng:testng:7.7.0'// Оставлено без изменений
     implementation 'io.qameta.allure:allure-junit4:2.10.0' // Обновлено
     implementation 'io.qameta.allure:allure-rest-assured:2.10.0' // Обновлено
+    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:4.4.3'
 }
 
 configurations {
-    aspectj
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
 
 test {
-    useJUnitPlatform()
-    systemProperty 'allure.results.directory', "${buildDir}/allure-results"
-}
-
-dependencies {
-    aspectj 'org.aspectj:aspectjweaver:1.9.7' // Укажите вашу версию AspectJ
+    useTestNG()
 }
