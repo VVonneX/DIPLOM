@@ -10,12 +10,12 @@ import ru.churikov.rest.models.FeedDto;
 public class PostApiTest {
 
     private FeedSteps steps = new FeedSteps();
-
+/*
  //   @Test
     public void postAuthFeedPositiveTest() {
         Feed feed = new Feed("111", "faker.book().title()");
         ValidatableResponse response = steps.postFeed(feed);
         FeedDto jsonResponse = response.assertThat().statusCode(200).extract().body().as(FeedDto.class);// сделать все 1 цепочке
         Assert.assertNotNull(jsonResponse.getId());
-    }
+    }*/
 }

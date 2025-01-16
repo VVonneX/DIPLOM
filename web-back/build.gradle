@@ -1,8 +1,8 @@
 plugins {
-    id 'org.springframework.boot' version '2.7.5' // Обновлено до последней стабильной версии
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE' // Обновлено
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
-    id 'io.qameta.allure' version '2.11.0' // Обновлено до последней стабильной версии
+    //id 'io.qameta.allure' version '2.11.0' // Обновлено до последней стабильной версии
 }
 
 group 'ru.churikov.rest'
@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
-    implementation 'org.yaml:snakeyaml:2.0' // Обновлено
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8'
+    compile group: 'org.yaml', name: 'snakeyaml', version: '1.8'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-rest'
     implementation 'org.springframework.boot:spring-boot-starter-security'
@@ -25,20 +25,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.security:spring-security-test'
     implementation 'io.rest-assured:rest-assured:4.5.1'
-    testImplementation 'com.google.code.gson:gson:2.10.1'
-    testImplementation 'org.testng:testng:7.7.0'// Оставлено без изменений
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'org.testng:testng:7.7.0'// Оставлено без изменений
     implementation 'io.qameta.allure:allure-junit4:2.10.0' // Обновлено
-    testImplementation 'io.qameta.allure:allure-rest-assured:2.10.0' // Обновлено
-    testImplementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:4.4.3'
-}
-
-jar {
-    manifest {
-        attributes(
-                'Main-Class': 'ru.churikov.rest.Main' // Укажите ваш главный класс
-        )
-    }
+    implementation 'io.qameta.allure:allure-rest-assured:2.10.0' // Обновлено
+    //implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+    //implementation 'io.github.bonigarcia:webdrivermanager:4.4.3'
 }
 
 configurations {
@@ -47,6 +39,8 @@ configurations {
     }
 }
 
+
 test {
     useTestNG()
 }
+

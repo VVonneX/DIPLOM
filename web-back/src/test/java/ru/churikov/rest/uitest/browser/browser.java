@@ -1,3 +1,4 @@
+/*
 package ru.churikov.rest.uitest.browser;
 
 import org.openqa.selenium.WebDriver;
@@ -20,3 +21,4 @@ public class browser {
         }
     }
 }
+*/
