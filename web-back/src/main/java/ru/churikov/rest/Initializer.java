@@ -17,12 +17,8 @@ public class Initializer {
     @Autowired
     private AuthUserRepository authUserRepo;
 
+    @Autowired
     private ObjectMapper objectMapper;
-
-    public Initializer() {
-        objectMapper = new ObjectMapper();
-        objectMapper.registerModule(new Jdk8Module());
-    }
 
     @Autowired
     private FeedRepository feedRepository;

@@ -28,7 +28,6 @@ import java.util.List;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -38,10 +37,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WithMockUser
 public class FeedControllerTest {
 
-    //@Autowired
+    @Autowired
     public MockMvc mockMvc;
 
-    //@MockBean
+    @MockBean
     public FeedService feedService;
 
     private static final String ID = "1";
@@ -52,7 +51,7 @@ public class FeedControllerTest {
     public FeedControllerTest() {
     }
 
-    //@Test
+    @Test
     void getAllFeed() throws Exception {
         Mockito.when(feedService.getAllFeed()).thenReturn(getListFeed());
 
@@ -62,11 +61,8 @@ public class FeedControllerTest {
                 .andExpect(jsonPath("$[0].name", equalTo(NAME)))
                 .andReturn();
     }
-    // проверка метода getAllFeed(вместо обычного feedService используется мок сервис, который иметирует поведение фид сервиса,
-    // поведение которого мы точно контролируем, и ожидаем возвращение заранее изместного результата
-    // в нашем случаем, возвращает значения в конфигурации)
 
-   // @Test
+    @Test
     void getOneByFeed() throws Exception {
         Mockito.when(feedService.getOntById(Mockito.any())).thenReturn(getFeed());
 
@@ -76,7 +72,7 @@ public class FeedControllerTest {
                 .andReturn();
     }
 
-    /*  @Test
+      /*@Test
       void createOrEdit() throws Exception {
           Mockito.when(feedService.save(Mockito.any(Feed.class))).thenReturn(getFeed());
 
@@ -84,8 +80,8 @@ public class FeedControllerTest {
                   .andExpect(status().isOk())
                   .andExpect(jsonPath("$.name", equalTo(NAME)))
                   .andReturn();
-      }
-  */
+      }*/
+
     public static String readFileAsString(String filename) throws IOException {
         File file = new File("src/test/resources/" + filename);
         Path path = file.toPath();
