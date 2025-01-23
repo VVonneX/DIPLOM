@@ -13,8 +13,8 @@ public class ProjectPage {
     private SelenideElement locatorButtonCreateNote = $x("//button[@class='mat-focus-indicator mat-raised-button mat-button-base mat-primary']");
     private List<SelenideElement> locatorAllNote = $$x("//button[span[text()='Удалить']]");
     private String locatorNewNote = "(//button[span[text()='Удалить']])[%s]";
-    private SelenideElement locatorDialogContainer = $x("#mat-dialog-0");
-    private SelenideElement locatorInputHeaderField = $x("//input[@ng-reflect-model='Заметка 1']");
+    private SelenideElement locatorDialogContainer = $("#mat-dialog-0");
+    private SelenideElement locatorInputHeaderField = $("#mat-input-0");
     private SelenideElement locatorButtonSave = $x("//button/span[text()='Сохранить']");
     private String locatorHeaderNote = "//div[%s]/h3[text()='%s']";
 
