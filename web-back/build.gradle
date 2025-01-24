@@ -1,8 +1,8 @@
 plugins {
-    id 'org.springframework.boot' version '2.4.1'
+    id 'org.springframework.boot' version '2.5.0'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
-    }
+}
 
 group 'ru.churikov'
 version '1.0-SNAPSHOT'
@@ -29,6 +29,11 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'io.qameta.allure:allure-junit4:2.10.0' // Обновлено
+    implementation 'io.qameta.allure:allure-rest-assured:2.10.0'
+    testImplementation 'junit:junit:4.4'
+    implementation 'io.rest-assured:rest-assured:4.5.1'
     /*implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation 'org.springframework.boot:spring-boot-starter-security'*/

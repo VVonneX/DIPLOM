@@ -5,9 +5,13 @@ name: backend
 # Controls when the workflow will run
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - develop
 
 jobs:
   build_test_docker:
